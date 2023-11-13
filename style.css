@@ -1,0 +1,403 @@
+html {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  filter: brightness(1.2);
+  z-index: -2;
+  opacity: 0, 2;
+}
+
+.headerBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-decoration: none;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+.leftBarContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 16em;
+}
+
+.logoContainer {
+  margin: 0.7em 0 0.7em 2.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 8.8em;
+  text-decoration: none;
+}
+
+.logoghibli {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  width: 5.2em;
+  letter-spacing: 0.1em;
+  font-family: "melancholy";
+}
+
+.logoImageContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
+
+.logoImage {
+  width: 2em;
+}
+
+.rightBarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightBarStuff {
+  position: relative;
+  color: white;
+  width: 27em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2.5vw;
+}
+
+.separator {
+  width: 2.5em;
+  height: 2.5em;
+  filter: hue-rotate(140deg);
+}
+
+.about,
+.music,
+.contact {
+  font-size: 1.1em;
+  text-decoration: none;
+  color: rgb(221, 221, 221);
+  font-family: "izayoi";
+  position: relative;
+  padding: 0 6px;
+}
+
+.about:after,
+.music:after,
+.contact:after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(to right, rgb(0, 217, 255), rgb(0, 4, 255));
+  height: 2px;
+  width: 0%;
+  left: 0;
+  bottom: -2px;
+  transition: 0.3s;
+}
+
+.about:hover:after,
+.music:hover:after,
+.contact:hover:after {
+  width: 100%;
+}
+
+.about:hover,
+.music:hover,
+.contact:hover {
+  text-shadow: 0 0 5px rgb(59, 210, 230), 0 0 12px rgb(59, 210, 230),
+    0 0 20px rgb(59, 210, 230);
+  color: white;
+}
+
+.rightBarStuff.show {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  z-index: 4;
+  padding: 1.5em 0;
+  top: 3.4em;
+  width: 10em;
+  right: -0.42em;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.layer1 {
+  position: relative;
+}
+
+.layer1Container {
+  width: 85%;
+  height: 100%;
+  border-radius: 1.5em;
+  margin: 9em auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 2em rgb(69, 69, 69);
+}
+
+.layer1Left {
+  color: white;
+  margin: 3em 2em 3em 5em;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.greetings {
+  font-size: 2.2em;
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+  text-align: center;
+  font-family: "kawashiro";
+}
+
+.description {
+  margin-top: 1em;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  text-align: center;
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+}
+
+.layer1Right {
+  width: 50vw;
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layer1Image {
+  width: 35vw;
+}
+
+.layer1Caption {
+  color: white;
+  margin-top: 29px;
+  font-size: 1.1em;
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+}
+
+.layer2Bg {
+  background-image: linear-gradient(black, black);
+  margin-top: 18em;
+}
+
+.layer2Content {
+  padding-top: 1em;
+}
+
+.layer2Heading {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  margin: 0.5em 1em 1.5em 1em;
+  font-family: "kamishirasawa";
+}
+
+.layer2InfoContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  justify-content: space-around;
+  margin: 0 2.5em;
+  flex-wrap: wrap;
+}
+
+.academiaContainer,
+.journalContainer,
+.libraryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  /* flex: 1 1 0px; */
+}
+
+.academiaContainer img,
+.journalContainer img,
+.libraryContainer img {
+  display: block;
+  width: 100%;
+}
+
+.academiaContainer,
+.journalContainer,
+.libraryContainer {
+  width: 12em;
+  height: 14em;
+  object-fit: cover;
+  border: 0.3em solid rgb(255, 255, 255);
+  border-radius: 1.5em;
+  box-shadow: 0 10px 30px black;
+  transition: 0.3s;
+  margin: -0.5em -1em -1em -1em;
+}
+
+.academiaContainer,
+.journalContainer,
+.libraryContainer {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgb(2, 173, 164);
+}
+
+.linkI {
+  /* margin: 1em 2em 0 2em; */
+  border-radius: 1.5em;
+  overflow: hidden;
+}
+
+.academiaSubtext,
+.journalSubtext,
+.librarySubtext {
+  text-align: center;
+  color: white;
+  font-size: 1.7em;
+  margin: 1em 0 1em 0;
+  font-family: "lunatic";
+  z-index: 2;
+}
+
+.layer3 {
+  background-size: cover;
+  object-fit: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(1.1);
+}
+
+.layer3Text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 1em;
+  text-shadow: 0 0 1em black, 0 0 2em black;
+  font-family: "hakugyokurou";
+  letter-spacing: 0.1em;
+  margin: 11em 0;
+}
+
+.layer3Quote {
+  font-size: 3em;
+  text-align: center;
+  font-style: italic;
+}
+.layer3QuoteFrom {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 2em;
+}
+
+.layer4Bg {
+  background-image: linear-gradient(black, black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5em 0;
+}
+
+.layer4Content {
+  background: rgb(32, 32, 32);
+  width: 60em;
+  padding: 2em 0;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 2em;
+}
+
+.layer4Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 0 2em 0 4em;
+  line-height: 1.3em;
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+}
+
+.layer4TextHeading {
+  font-size: 1.1em;
+  font-family: "sunflower";
+  font-weight: bold;
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+}
+
+.layer4TextSubtext {
+  margin-top: 3px;
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+}
+
+.layer4ContactContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5em 0 3em;
+}
+
+.layer4Contact {
+  color: white;
+  border: 0.15em solid white;
+  background-image: linear-gradient(
+    rgba(0, 171, 194, 0.5),
+    rgba(1, 68, 68, 0.5)
+  );
+  border-radius: 0.4em;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "kawashiro";
+}
+
+.layer4Contact:hover {
+  background-image: linear-gradient(
+    rgba(0, 171, 194, 0.7),
+    rgba(1, 68, 68, 0.7)
+  );
+}
+
+.footerLayerBg {
+  background: rgb(19, 25, 41);
+  padding: 1.25em 0;
+  box-shadow: 0 0 1em rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footerLayerAuthor {
+  color: white;
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  font-family: "izayoi";
+}
